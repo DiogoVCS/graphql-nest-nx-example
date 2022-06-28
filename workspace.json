@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "calendar-management-api": "apps/calendar-management-api",
+    "domain": "libs/domain",
+    "dto": "libs/dto",
+    "infrastructure": "libs/infrastructure",
+    "services": "libs/services"
+  }
+}

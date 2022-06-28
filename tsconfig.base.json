@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@calendar-management-microservice/domain": ["libs/domain/src/index.ts"],
+      "@calendar-management-microservice/dto": ["libs/dto/src/index.ts"],
+      "@calendar-management-microservice/infrastructure": [
+        "libs/infrastructure/src/index.ts"
+      ],
+      "@calendar-management-microservice/services": [
+        "libs/services/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

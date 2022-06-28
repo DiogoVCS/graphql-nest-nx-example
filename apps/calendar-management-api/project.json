@@ -1,0 +1,63 @@
+{
+  "root": "apps/calendar-management-api",
+  "sourceRoot": "apps/calendar-management-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/calendar-management-api",
+        "main": "apps/calendar-management-api/src/main.ts",
+        "generatePackageJson": true,
+        "tsConfig": "apps/calendar-management-api/tsconfig.app.json",
+        "assets": [
+          "apps/calendar-management-api/src/assets"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "generatePackageJson": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/calendar-management-api/src/environments/environment.ts",
+              "with": "apps/calendar-management-api/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "calendar-management-api:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/calendar-management-api/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/calendar-management-api"
+      ],
+      "options": {
+        "jestConfig": "apps/calendar-management-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
